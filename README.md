@@ -19,7 +19,7 @@ You need to have mongodb running on your local machine if you want to use local 
 Command for installation
 
 ```
-$ git clone https://github.com/RicaJerry/Node-mid.git
+$ git clone https://github.com/RicaJerry/Node-senior.git
 $ cd ../path/to/the/file
 $ npm install
 $ npm start
