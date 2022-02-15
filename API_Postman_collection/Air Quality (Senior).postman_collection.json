@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "88cd4147-ea7c-419a-8064-50698340e6c6",
+		"name": "Air Quality (Senior)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Air visual api",
+			"item": [
+				{
+					"name": "List countries",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Nearest city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.airvisual.com/v2/nearest_city?key={{YOUR_API_KEY}}",
+							"protocol": "http",
+							"host": [
+								"api",
+								"airvisual",
+								"com"
+							],
+							"path": [
+								"v2",
+								"nearest_city"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{YOUR_API_KEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Params Long Lat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.airvisual.com/v2/nearest_city?lat=48.02&lon=-50.20&key={{YOUR_API_KEY}}",
+							"protocol": "http",
+							"host": [
+								"api",
+								"airvisual",
+								"com"
+							],
+							"path": [
+								"v2",
+								"nearest_city"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "48.02"
+								},
+								{
+									"key": "lon",
+									"value": "-50.20"
+								},
+								{
+									"key": "key",
+									"value": "{{YOUR_API_KEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List contries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basic_url}}/api/air/listContries",
+					"host": [
+						"{{basic_url}}"
+					],
+					"path": [
+						"api",
+						"air",
+						"listContries"
+					]
+				},
+				"description": "List des pays lié à  \n[http://api.airvisual.com/v2/countries?key={{YOUR_API_KEY}}](http://api.airvisual.com/v2/countries?key={{YOUR_API_KEY}})"
+			},
+			"response": []
+		},
+		{
+			"name": "Get polution by lon lat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basic_url}}/api/air/byLongLat?lon=-50.20&lat=48.2",
+					"host": [
+						"{{basic_url}}"
+					],
+					"path": [
+						"api",
+						"air",
+						"byLongLat"
+					],
+					"query": [
+						{
+							"key": "lon",
+							"value": "-50.20"
+						},
+						{
+							"key": "lat",
+							"value": "48.2"
+						}
+					]
+				},
+				"description": "Data sur la polution prenant en compte les paramètres de longitude et latitude\n\n*   lon: longitude\n*   lat: latitude\n    \n\nSi il y a des paramètre manquant l'api répondra le status 400"
+			},
+			"response": []
+		}
+	]
+}
